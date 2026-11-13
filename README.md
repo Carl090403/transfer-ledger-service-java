@@ -12,6 +12,7 @@ mvn -q compile && java -cp target/classes dev.carlosf.ledger.Api   # http://127.
 curl -X POST localhost:8080/transfers -H "Content-Type: application/json" \
      -H "Idempotency-Key: demo-00000001" \
      -d '{"source":"CHQ-000001","destination":"SAV-000002","amount":"25.00"}'
+curl localhost:8080/accounts/SAV-000002/balance     #for balance check
 ```
 To check that the Python version agrees with the contract, run this from the root of the Python repo:
 ```bash
